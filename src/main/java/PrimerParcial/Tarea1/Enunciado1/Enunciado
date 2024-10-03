@@ -1,1 +1,32 @@
-Investigar y adaptar el test de BancoTest (mock) 3 tcs  en uno solo parametrizado
+Tenemos un Banco UPB donde este va realizar prestamos de dinero
+pero necesitamos un metodo que nos ayude con esto:
+
+Como usuario nececito enviar el ci y la cantidad de dinero
+que podria prestar  , Quiero saber cuanto dinero
+puedo prestar a una determinada persona basada en el ci
+para esto necesito utilizar los servicios de:
+
+ASFI --> si al persona puede o no puede accesder a un credito
+SEGIP --> para saber si el ci es valido o no
+AFP  --> para saber cuanto dinero puedo prestar a esa persona
+
+Datos de salida
+ASFI--> isAbleToGetCredit(ci)  ---> true/false
+SEGIP -> isRealPerson(ci) ---> true/false
+AFP -> aporte(ci) ---> numero
+
+** maximo   - aporte * 3
+--------------------------------------------
+input -> ci = 6656585 , cantidad 6000
+output -> se le puede realizar el prestamo: VALOR
+          usted no esta habilitado para prestamos
+          debe revisar su carnet de identidad
+test ->
+A - realiza el prestamo
+P - realiza el prestamo
+N - no pueda acceder creditos
+    no es una persona real
+    la cantidad solicitada es < 1
+--------------------------------------------------------
+
+* Investigar y adaptar el test de BancoTest (mock) 3 tcs que se realizo en clase en uno solo parametrizado
